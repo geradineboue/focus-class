@@ -1,11 +1,9 @@
 pipeline{
     stages{
-        agent any{
+        agent any
             stage('deploy tomcat server'){
                 step
                 sh 'deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.1.253:8080/')], contextPath: null, war: '**/*.war''
             }
         }
-    }
-
 }
